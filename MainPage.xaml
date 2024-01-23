@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="iOSBorderLeak.Maui.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <Image
+                Source="dotnet_bot.png"
+                HeightRequest="185"
+                Aspect="AspectFit"
+                SemanticProperties.Description="dot net bot in a race car number eight" />
+
+            <Label
+                Text="Push a page and come back. Press 'Force GC' to test for its collection."
+                Style="{StaticResource SubHeadline}"
+                x:Name="Label"/>
+
+            <Button
+                Text="Push Safe Page"
+                HorizontalOptions="Fill"
+                Clicked="PushSafePage"/>
+            
+            <Button
+                Text="Push Leaky Page"
+                HorizontalOptions="Fill"
+                Clicked="PushLeakyPage"/>
+            
+            <Button Text="Force GC"
+                    x:Name="ForceGCButton"
+                    IsEnabled="False"
+                    Clicked="ForceGC"/>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
